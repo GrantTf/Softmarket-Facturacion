@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop, main]
+
+jobs:
+  calidad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pytest pytest-cov flake8 black
+      - name: Estilo
+        run: |
+          black --check src tests
+          flake8 src tests --max-line-length 100
+      - name: Pruebas
+        run: PYTHONPATH=src pytest --cov=facturacion --cov-fail-under=80
