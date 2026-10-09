@@ -8,6 +8,7 @@ Problemas visibles:
 - Cada nuevo tipo de cliente o impuesto obliga a editar los if/elif (viola OCP).
 - Depende directamente de MySQL y de SMTP (viola DIP): imposible de probar.
 """
+import os
 import smtplib
 import mysql.connector  # dependencia concreta "quemada" en el código
 
@@ -40,7 +41,7 @@ class Factura:
 
         # Persistencia acoplada (credenciales en el código)
         db = mysql.connector.connect(host="localhost", user="root",
-                                     password="1234", database="softmarket")
+                                     password=os.environ["DB_PASSWORD"], database="softmarket")
         cur = db.cursor()
         cur.execute("INSERT INTO facturas (cliente, total) VALUES ('"
                     + cliente["nombre"] + "', " + str(total) + ")")  # SQL injection
