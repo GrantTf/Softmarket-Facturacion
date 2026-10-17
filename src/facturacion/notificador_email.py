@@ -1,4 +1,5 @@
 """Notificador por correo (SM-15, en desarrollo). Implementa el protocolo Notificador."""
+
 import smtplib
 
 

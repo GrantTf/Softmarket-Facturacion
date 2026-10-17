@@ -3,6 +3,7 @@
 Para agregar un nuevo tipo de cliente se crea una clase nueva y se registra;
 no se modifica el código existente.
 """
+
 from abc import ABC, abstractmethod
 from decimal import Decimal
 

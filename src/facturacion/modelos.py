@@ -1,4 +1,5 @@
 """Entidades del dominio de facturación (sin lógica de infraestructura)."""
+
 from dataclasses import dataclass, field
 from decimal import Decimal
 
@@ -18,7 +19,7 @@ class Item:
 class Cliente:
     nombre: str
     email: str
-    tipo: str = "normal"   # normal | frecuente | vip
+    tipo: str = "normal"  # normal | frecuente | vip
     pais: str = "CO"
 
 

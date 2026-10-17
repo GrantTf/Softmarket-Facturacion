@@ -2,6 +2,7 @@
 
 El servicio depende de estas abstracciones, no de MySQL ni de SMTP.
 """
+
 from typing import Protocol
 
 from .modelos import Factura
