@@ -2,6 +2,7 @@
 
 Antes este bloque estaba copiado en 3 módulos; ahora vive en un solo lugar.
 """
+
 from abc import ABC, abstractmethod
 from decimal import Decimal
 

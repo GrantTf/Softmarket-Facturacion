@@ -49,6 +49,8 @@ def test_factura_sin_items_lanza_error(servicio):
 
 def test_se_guarda_y_se_notifica():
     repo, notif = RepositorioEnMemoria(), NotificadorFalso()
-    ServicioFacturacion(repo, notif).generar(Cliente("Ana", "ana@x.com"), items_basicos())
+    ServicioFacturacion(repo, notif).generar(
+        Cliente("Ana", "ana@x.com"), items_basicos()
+    )
     assert len(repo.facturas) == 1
     assert notif.enviados[0][0] == "ana@x.com"
