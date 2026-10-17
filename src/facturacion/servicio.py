@@ -1,4 +1,5 @@
 """Servicio de facturación: solo orquesta el proceso (SRP + DIP)."""
+
 from decimal import ROUND_HALF_UP, Decimal
 
 from .descuentos import politica_para
